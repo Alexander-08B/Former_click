@@ -38,7 +38,7 @@ public class Rektangel extends Figur {
     @Override
     public void rita(Graphics g) {
         g.setColor(färg);
-        g.fillRect(super.positionX, super.positionY, höjd, bredd);
+        g.fillRect(super.positionX - bredd/2, super.positionY - höjd/2, höjd, bredd);//inte klar
     }
 }
 

@@ -32,6 +32,6 @@ public class Cirkel extends Figur{
     public void rita(Graphics g) {
          //System.out.println("cirkel: "+positionX+" "+radie);
         g.setColor(färg);
-        g.fillOval(super.positionX, super.positionY, radie, radie);
+        g.fillOval(super.positionX - radie/2, super.positionY - radie/2, radie, radie);
     }
 }

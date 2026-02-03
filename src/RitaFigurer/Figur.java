@@ -46,6 +46,6 @@ public abstract class Figur {
     }
     public abstract double räknaArea();
     
-    public abstract void rita(Graphics g);//byt ut double
+    public abstract void rita(Graphics g);
  
 }
