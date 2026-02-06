@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class RitaFigurerJPanel extends javax.swing.JPanel {
     ArrayList<Figur> figurlista = new ArrayList<>();
     private String figur = "";
+    FilhanteringFormer_Click list = new FilhanteringFormer_Click();
     /**
      * Creates new form RitaFigurerJPanel
      */
@@ -143,7 +144,7 @@ public class RitaFigurerJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnRensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRensaActionPerformed
-        figur = "rensa";
+        figurlista.clear();
         repaint();
     }//GEN-LAST:event_jbtnRensaActionPerformed
 
@@ -160,11 +161,15 @@ public class RitaFigurerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jbtnTriangelActionPerformed
 
     private void btnSparaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSparaActionPerformed
-        // TODO add your handling code here:
+        list.saveToFile(figurlista);
     }//GEN-LAST:event_btnSparaActionPerformed
 
     private void btnHämtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHämtaActionPerformed
-        // TODO add your handling code here:
+        figurlista = list.readFromFile();
+        for(int i = 0; i < figurlista.size(); i++){
+            repaint();
+        }
+        
     }//GEN-LAST:event_btnHämtaActionPerformed
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
@@ -173,8 +178,7 @@ public class RitaFigurerJPanel extends javax.swing.JPanel {
         
         int w = (int) (Math.random() * 100 + 15);
         int h = (int) (Math.random() * 100 + 15);
-       // x -= w/2;
-       // y -= h/2;
+
         if (this.jbtnCirkel.isSelected()){
             Figur c = new Cirkel (x, y, w);
             figurlista.add(c);
@@ -202,7 +206,7 @@ public class RitaFigurerJPanel extends javax.swing.JPanel {
             figurlista.get(i).rita(g);
         }
         
-        if(figur.equals("rensa")){
+        /*if(figur.equals("rensa")){
             super.paintComponent(g);
         }/*
         int panelWidth = getWidth();
