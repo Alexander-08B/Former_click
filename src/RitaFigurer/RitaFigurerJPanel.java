@@ -166,7 +166,6 @@ public class RitaFigurerJPanel extends javax.swing.JPanel {
 
     private void btnHämtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHämtaActionPerformed
         ArrayList<Figur> fma = list.readFromFile();
-
         if (fma != null) {
             figurlista = fma;
             repaint();

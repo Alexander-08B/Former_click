@@ -25,20 +25,23 @@ public class FilhanteringFormer_Click {
         
         out.writeObject(list);
         out.flush();
+        out.close();
+        fileOut.close();
 }
         catch (IOException ex){
-            System.out.println("Något gick fel");
+            System.out.println("IOException is caught");
+            System.out.println(ex.getMessage());
         }
     }
     public ArrayList<Figur> readFromFile(){
     ArrayList<Figur> list=null;
     
     try{
-       FileInputStream fileIn = new FileInputStream("savedFigurLista.ser");
+       FileInputStream fileIn = new FileInputStream("savedFigurLista");
     
     ObjectInputStream oin = new ObjectInputStream(fileIn);
     
-    list = (ArrayList)oin.readObject();
+    list = (ArrayList<Figur>)oin.readObject();
     
     oin.close();
     fileIn.close();

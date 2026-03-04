@@ -35,7 +35,6 @@ public class Triangel extends Figur {
 
     @Override
     public void rita(Graphics g) {
-          int mt = super.positionX + bass;
         int [] yPoints = {super.positionY - höjd/2, super.positionY + höjd - höjd/2, super.positionY - höjd/2};
         int [] xPoints = {super.positionX - bass/2, super.positionX + bass / 2 - bass /2, super.positionX + bass - bass/2};
         g.setColor(färg);

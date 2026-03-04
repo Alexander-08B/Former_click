@@ -6,12 +6,13 @@ package RitaFigurer;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.Serializable;
 
 /**
  *
  * @author alebe18
  */
-public abstract class Figur {
+public abstract class Figur implements Serializable {
     private String form;
     protected int positionX;
     protected int positionY;
