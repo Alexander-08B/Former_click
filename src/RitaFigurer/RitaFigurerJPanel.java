@@ -165,11 +165,16 @@ public class RitaFigurerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSparaActionPerformed
 
     private void btnHämtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHämtaActionPerformed
-        figurlista = list.readFromFile();
-        for(int i = 0; i < figurlista.size(); i++){
+        ArrayList<Figur> fma = list.readFromFile();
+        
+        if (fma != null) {
+            figurlista = fma;
             repaint();
         }
         
+        else {
+            figurlista.clear();
+        }
     }//GEN-LAST:event_btnHämtaActionPerformed
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
